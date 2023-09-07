@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richard's Assignment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="content">
+        <header>
+            <a data-testid="slackDisplayImage" href="index.html">
+                <img class="image" src="slackImage.jpg" alt="Alasa">
+            </a>
+            <h1 data-testid="slackUserName">Alasa</h1>
+        </header>
+    <main>
+        <h2 data-testid="myTrack">Frontend Track</h2>
+        <p class="date", data-testid="currentDayOfTheWeek"></p>
+        <a class="repo", href="https://github.com/devalasa/hnginternship", data-testid="githubURL">My Github Repo</a>
+        <h5 class="utc-time", data-testid="currentUTCTime"></h5>
+    </main>
+    <footer>
+        <h6>&copy;</h6>
+        <h4 class="copy"></h4>
+        
+    </footer>
+    <script>
+    let daynames = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ];
+    let d = new Date();
+    let year = d.getFullYear()
+    let dayName = daynames[d.getDay()];
+    let fulldate = `${dayName}`;
+    document.querySelector(".date").textContent = fulldate;
+    let copyYear = `${year} .:|:. Richard O. Ogboanoh .:|:.`;
+    document.querySelector(".copy").textContent = copyYear;
+    const utc = new Date();
+    let hour = utc.getUTCHours();
+    let minute = utc.getMinutes();
+    let seconds = utc.getSeconds();
+    let mSeconds = utc.getMilliseconds();
+    document.querySelector(".utc-time").textContent = `${hour}:${minute}:${seconds}:${mSeconds}`;
+
+    console.log(hour, minute, seconds, mSeconds);
+    </script>
+    </div>
+</body>
+</html>
