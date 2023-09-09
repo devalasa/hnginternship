@@ -13,10 +13,10 @@
             <a data-testid="slackDisplayImage" href="index.html">
                 <img class="image" src="slackImage.jpg" alt="Alasa">
             </a>
-            <h1 data-testid="slackUserName">Alasa</h1>
+            <h1 data-testid="slackUserName">Username: Alasa</h1>
         </header>
     <main>
-        <h2 data-testid="myTrack">Frontend Track</h2>
+        <h2 data-testid="myTrack">Track: Frontend Track</h2>
         <p class="date", data-testid="currentDayOfTheWeek"></p>
         <a class="repo", href="https://github.com/devalasa/hnginternship", data-testid="githubURL">My Github Repo</a>
         <h5 class="utc-time", data-testid="currentUTCTime"></h5>
@@ -39,14 +39,14 @@
     let d = new Date();
     let year = d.getFullYear()
     let dayName = daynames[d.getDay()];
-    let fulldate = `${dayName}`;
+    let fulldate = `Today is ${dayName}`;
     document.querySelector(".date").textContent = fulldate; 
     let copyYear = `${year} .:|:. Richard O. Ogboanoh .:|:.`;
     document.querySelector(".copy").textContent = copyYear;
 function updateTime() {
     let currentTime = new Date();
     let currentUTCTime = currentTime.getTime();
-    document.querySelector(".utc-time").textContent = `${currentUTCTime}`;
+    document.querySelector(".utc-time").textContent = `Current UTC TIME (Milliseconds) is: ${currentUTCTime}`;
 }
 setInterval(updateTime, 1);
     </script>
