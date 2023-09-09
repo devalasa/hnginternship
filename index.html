@@ -40,17 +40,15 @@
     let year = d.getFullYear()
     let dayName = daynames[d.getDay()];
     let fulldate = `${dayName}`;
-    document.querySelector(".date").textContent = fulldate;
+    document.querySelector(".date").textContent = fulldate; 
     let copyYear = `${year} .:|:. Richard O. Ogboanoh .:|:.`;
     document.querySelector(".copy").textContent = copyYear;
-    const utc = new Date();
-    let hour = utc.getUTCHours();
-    let minute = utc.getMinutes();
-    let seconds = utc.getSeconds();
-    let mSeconds = utc.getMilliseconds();
-    document.querySelector(".utc-time").textContent = `${hour}:${minute}:${seconds}:${mSeconds}`;
-
-    console.log(hour, minute, seconds, mSeconds);
+function updateTime() {
+    let currentTime = new Date();
+    let currentUTCTime = currentTime.getTime();
+    document.querySelector(".utc-time").textContent = `${currentUTCTime}`;
+}
+setInterval(updateTime, 1);
     </script>
     </div>
 </body>
